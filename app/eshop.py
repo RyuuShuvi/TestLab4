@@ -4,6 +4,7 @@ import uuid
 from typing import Dict
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
+from typing import List
 
 try:
     from services import ShippingService
@@ -87,7 +88,7 @@ class ShoppingCart:
             return True
         return False
 
-    def submit_cart_order(self) -> list[str]:
+    def submit_cart_order(self) -> List[str]:
         """Process cart items and return product IDs."""
         product_ids = []
         for product, count in self.products.items():
